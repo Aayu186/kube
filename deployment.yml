@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: template-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: template
+  template:
+    metadata:
+      labels:
+        app: template
+    spec:
+      containers:
+        - name: template
+          image: uya12345/template
+          ports:
+            - containerPort: 80
+          
